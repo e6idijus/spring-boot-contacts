@@ -15,6 +15,14 @@ public class Student {
 
     private String birthday;
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -37,5 +45,15 @@ public class Student {
 
     public String getBirthday() {
         return birthday;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", birthday='" + birthday + '\'' +
+                '}';
     }
 }
