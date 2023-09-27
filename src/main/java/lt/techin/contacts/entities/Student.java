@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 
+import java.util.List;
+
 @Entity
 @Table(name = "Students")
 public class Student {
@@ -20,6 +22,12 @@ public class Student {
     private String lastName;
 
     private String birthday;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "Student_id", nullable = false)
+    @NotNull
+    @NotEmpty
+    private List<Email> emails;
 
     public int getId() {
         return id;
@@ -47,6 +55,14 @@ public class Student {
 
     public String getBirthday() {
         return birthday;
+    }
+
+    public List<Email> getEmails() {
+        return emails;
+    }
+
+    public void setEmails(List<Email> emails) {
+        this.emails = emails;
     }
 
     @Override

@@ -16,7 +16,6 @@ public class Email {
     private String address;
 
     @NotNull
-    @NotEmpty
     private Boolean isPrimary;
 
     public String getAddress() {
@@ -27,11 +26,11 @@ public class Email {
         this.address = address;
     }
 
-    public Boolean getPrimary() {
+    public Boolean getIsPrimary() {
         return isPrimary;
     }
 
-    public void setPrimary(Boolean primary) {
+    public void setIsPrimary(Boolean primary) {
         isPrimary = primary;
     }
 }
