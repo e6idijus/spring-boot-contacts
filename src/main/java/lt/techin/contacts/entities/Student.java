@@ -1,23 +1,25 @@
 package lt.techin.contacts.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "Students")
 public class Student {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @NotNull
+    @NotEmpty
     private String firstName;
+
+    @NotNull
+    @NotEmpty
     private String lastName;
 
     private String birthday;
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public int getId() {
         return id;
