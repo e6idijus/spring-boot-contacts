@@ -10,9 +10,9 @@ import java.util.List;
 @RestController
 public class StudentController {
 
-    @Autowired
     private final StudentRepository studentRepository;
 
+    @Autowired
     public StudentController(StudentRepository studentRepository) {
         this.studentRepository = studentRepository;
     }
