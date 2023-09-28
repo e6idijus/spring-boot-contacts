@@ -25,7 +25,6 @@ public class StudentController {
     @PostMapping("/students")
     public void addStudent(@RequestBody Student student) {
         studentRepository.save(student);
-        System.out.println(student);
     }
 
 

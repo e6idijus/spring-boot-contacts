@@ -29,6 +29,14 @@ public class Student {
     @NotEmpty
     private List<Email> emails;
 
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "Students_professors",
+            joinColumns = @JoinColumn(name = "Student_id"),
+            inverseJoinColumns = @JoinColumn(name = "Professor_id")
+    )
+    private List<Professor> professors;
+
     public int getId() {
         return id;
     }
@@ -63,6 +71,14 @@ public class Student {
 
     public void setEmails(List<Email> emails) {
         this.emails = emails;
+    }
+
+    public List<Professor> getProfessors() {
+        return professors;
+    }
+
+    public void setProfessors(List<Professor> professors) {
+        this.professors = professors;
     }
 
     @Override
